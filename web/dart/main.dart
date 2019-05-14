@@ -53,13 +53,17 @@ void main() {
       if (data['status']) {
         List list = data['data'];
 
-        olList.text='';
-        list.forEach((d) {
-          LIElement liElement = new LIElement();
+        olList.text = '';
+        if (list.length > 0) {
+          list.forEach((d) {
+            LIElement liElement = new LIElement();
 
-          liElement.appendText(d['name'] + " " + d['city']);
-          olList.append(liElement);
-        });
+            liElement.appendText(d['name'] + " " + d['city']);
+            olList.append(liElement);
+          });
+        } else {
+          window.alert('No data found');
+        }
       } else {
         window.alert(data['message']);
       }
