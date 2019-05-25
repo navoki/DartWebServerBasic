@@ -6,7 +6,7 @@ class Connection {
 
   Connection() {
     settings = new ConnectionSettings(
-        host: '127.0.0.1', port: 3306, user: 'root', db: 'darttest');
+        host: '127.0.0.1', port: 3306, user: 'root',password: 'navoki@123*#', db: 'darttest');
   }
 
   void connect() async {
