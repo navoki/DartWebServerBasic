@@ -7,6 +7,7 @@ void main() {
   querySelector('#output').text = 'Your Dart app is running.';
 
   querySelector('#addBtn').onClick.capture((event) async {
+
     InputElement name = querySelector('#name');
     InputElement city = querySelector('#city');
 
@@ -22,7 +23,6 @@ void main() {
 
     await http.post(url, headers: headers, body: params).then((response) {
       Map data = convert.jsonDecode(response.body);
-
       if (data['status']) {
         window.alert(data['message']);
       } else {
